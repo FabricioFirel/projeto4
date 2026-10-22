@@ -45,7 +45,16 @@ python importarDados.py
 
 O script cria os gêneros que ainda não existem e insere os filmes do CSV.
 
-## 4 - Criar o super usuário
+## 4 - Super usuário
+
+O banco versionado neste repositório já vem com o super usuário criado:
+
+| Usuário  | Senha  |
+|----------|--------|
+| `aluno1` | `1234` |
+
+São os mesmos dados usados no exemplo de obtenção de token mais abaixo.
+Para criar outro super usuário:
 
 ```
 python manage.py createsuperuser
@@ -57,8 +66,14 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-- Admin: http://localhost:8000/admin/
-- API navegável: http://localhost:8000/api/
+| Endereço                      | Precisa de login?                      |
+|-------------------------------|----------------------------------------|
+| http://localhost:8000/api/    | Não - a leitura abre direto            |
+| http://localhost:8000/admin/  | Sim - `aluno1` / `1234`                |
+
+A leitura (`GET`) é pública por causa da permissão `IsAuthenticatedOrReadOnly`
+definida no `settings.py`. Para criar, editar ou apagar pela interface navegável
+do DRF, use o botão **Log in** no topo da página com o mesmo usuário.
 
 ## Endpoints
 
@@ -89,7 +104,7 @@ curl http://localhost:8000/api/filmes/
 curl http://localhost:8000/api/filmes/3/
 ```
 
-Obter token de autenticação:
+Obter token de autenticação (usuário `aluno1`, senha `1234`):
 
 ```
 curl.exe -X POST http://127.0.0.1:8000/api/token/ ^
