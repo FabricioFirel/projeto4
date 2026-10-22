@@ -5,6 +5,19 @@ com Django, Django REST Framework e django-filter.
 
 Leitura (`GET`) é pública; criação, edição e remoção exigem autenticação por token.
 
+## Acesso para teste
+
+O banco deste repositório já vem populado e com o super usuário criado, então é
+só rodar `python manage.py runserver` e acessar:
+
+| Endereço                      | Login                   |
+|-------------------------------|-------------------------|
+| http://localhost:8000/api/    | não precisa, abre direto |
+| http://localhost:8000/admin/  | `aluno1` / `1234`       |
+
+O mesmo usuário e senha valem para obter o token via CLI e para o botão
+**Log in** da interface navegável do DRF.
+
 ## Estrutura do banco
 
 | Tabela     | Campos                                                          |
