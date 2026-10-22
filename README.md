@@ -1,5 +1,7 @@
 # Projeto 4 - API de Filmes (Django REST Framework)
 
+**Alunos:** Fabrício Alves e Elizete Ludmila
+
 API REST para cadastro, consulta, edição e remoção de filmes e gêneros, construída
 com Django, Django REST Framework e django-filter.
 
